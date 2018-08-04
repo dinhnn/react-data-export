@@ -102,8 +102,12 @@ function getCell(v, cellRef, ws) {
         cell.z = XLSX.SSF._table[14];
         cell.v = dateToNumber(cell.v);
     } else if (typeof v === 'object') {
-        cell.v = v.value;
-        cell.s = v.style;
+        if(v.f){
+           cell.f = v.f;
+        } else {
+           cell.v = v.value;
+           cell.s = v.style;
+        }
     } else {
         cell.v = v;
         cell.t = 's';
