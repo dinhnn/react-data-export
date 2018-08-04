@@ -104,6 +104,8 @@ function getCell(v, cellRef, ws) {
     } else if (typeof v === 'object') {
         if(v.f){
            cell.f = v.f;
+           cell.v = v.v;
+           cell.t = v.t;
         } else {
            cell.v = v.value;
            cell.s = v.style;
